@@ -14,10 +14,12 @@ functions:
           method: get
 
   pranatapost:
-    handler: index.handler
+    handler: index.pranatapost
     events:
       - httpApi: 
           path: /post
           method: post
 
-
+plugins:
+  - serverless-offline
+  
