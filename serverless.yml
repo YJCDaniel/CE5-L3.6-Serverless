@@ -1,0 +1,23 @@
+service: node-http-api-dan
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: index.pranata
+    events:
+      - httpApi: 
+          path: /
+          method: get
+
+  pranatapost:
+    handler: index.handler
+    events:
+      - httpApi: 
+          path: /post
+          method: post
+
+
