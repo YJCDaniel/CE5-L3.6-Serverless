@@ -4,6 +4,8 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
+  deploymentBucket:
+    name: cohort5.deployment
 
 functions:
   api:
@@ -13,12 +15,28 @@ functions:
           path: /
           method: get
 
+      - sqs: 
+          arn:aws:sqs:us-east-1:255945442255:dan-http-api
+
   pranatapost:
     handler: index.pranatapost
     events:
       - httpApi: 
           path: /post
           method: post
+      - sqs: 
+          arn: 
+            Fn::GetAtt:
+              - DanQueue
+              - ARN
+
+resources:
+  Resources:
+    DanQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "dan-queue"
+          
 
 plugins:
   - serverless-offline

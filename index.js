@@ -1,4 +1,6 @@
 module.exports.pranata = async (event) => {
+  console.log (Dan)
+  console.log (event)
   return {
     statusCode: 200,
     body: JSON.stringify(
@@ -13,6 +15,7 @@ module.exports.pranata = async (event) => {
 };
 
 module.exports.pranatapost = async (event) => {
+  console.log (event)
   return {
     statusCode: 200,
     body: JSON.stringify(
