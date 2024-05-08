@@ -1,5 +1,4 @@
 module.exports.pranata = async (event) => {
-  console.log (Dan)
   console.log (event)
   return {
     statusCode: 200,
