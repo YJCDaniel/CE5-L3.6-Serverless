@@ -8,15 +8,12 @@ provider:
     name: cohort5.deployment
 
 functions:
-  api:
+  pranata:
     handler: index.pranata
     events:
       - httpApi: 
           path: /
           method: get
-
-      - sqs: 
-          arn:aws:sqs:us-east-1:255945442255:dan-http-api
 
   pranatapost:
     handler: index.pranatapost
