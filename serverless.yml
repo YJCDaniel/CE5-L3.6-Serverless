@@ -32,7 +32,7 @@ resources:
     DanQueue:
       Type: "AWS::SQS::Queue"
       Properties:
-        QueueName: "dan-queue"
+        QueueName: "Dan-queue"
           
 plugins:
   - serverless-offline
